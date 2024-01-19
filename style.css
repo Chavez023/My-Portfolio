@@ -25,12 +25,13 @@ html {
 #oval {
     border: white solid 2px;
     border-radius: 100vh;
-    height: 40vw;
-    width: 40vw;
+    height: 32vw;
+    width: 32vw;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: ease 4s;
 }
 
 
@@ -39,7 +40,7 @@ nav {
     width: 4%;
     position: fixed;
     z-index: 1;
-    padding: var(--isetpadding);
+    padding: 4%;
     display: inline-flex;
     justify-content: center;
     flex-direction: column;
@@ -58,15 +59,14 @@ main {
 
 section {
     height: 100%;
-    padding: var(--isetpadding);
+    padding: 6%;
     scroll-snap-align: start;
 }
 
 section:nth-child(1) h1,
 section:nth-child(2) h1,
 section:nth-child(3) h1,
-section:nth-child(4) h1,
-section:nth-child(5) h1 {
+section:nth-child(4) h1 {
     padding: 2%;
     text-align: center;
 }
@@ -75,9 +75,7 @@ section:nth-child(2) {
 
 }
 
-section:nth-child(5) {
-    background-color: #0353A4;
-}
+
 
 #edcontent,
 #Scontent {
@@ -88,15 +86,30 @@ section:nth-child(5) {
 }
 
 #edcontent {
-    width: var(--width_half);
+    width: var(--width_half); 
     margin-left: auto;
 }
 
 #Scontent {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     gap: 4%;
+}
 
+#SconitemLeft{
+    height: fit-content;
+    padding: 4%;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 28% auto;
+}
+
+#SconitemRight {
+    padding: 4%;
+}
+#SconitemLeft p,
+#SconitemRight p {
+    padding: 4%;
 }
 
 #edconitem {
@@ -105,26 +118,13 @@ section:nth-child(5) {
     grid-template-columns: 200px auto;
 }
 
-#SconitemL {
-    height: 500px;
-    display: grid;
-    grid-template-columns: 20% auto;
-    gap: 8%;
-
-
-}
-
-#SconitemR {
-
-}
-
 
 #name {
     font-size: 600%;
     width: 100%;
     text-align: center;
     position: absolute;
-    bottom: 20%;
+    bottom: 14%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -134,7 +134,7 @@ section:nth-child(5) {
     font-size: 200%;
     text-align: center;
     position: absolute;
-    bottom: 10%;
+    bottom: 14%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -145,4 +145,118 @@ a {
     transform: rotate(-90deg);
     align-items: center;
     text-align: center;
+}
+
+.contacts-flex {
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+}
+.contacts-flex a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contacts-flex i {
+    background-color: rgba(255, 255, 255, 0.329);
+    height: 20vw;
+    width: 20vw;
+    border-radius: 25vh;
+    transform:rotate(90deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 4vh;
+    
+    transition: ease .5s;
+}
+
+
+
+#contact-icon-1:hover {
+    box-shadow: 0 0 10px 10px dodgerblue;
+
+}
+#contact-icon-2:hover {
+    box-shadow: 0 0 10px 10px rgb(253, 253, 253)  ;
+}
+#contact-icon-3:hover {
+    box-shadow: 0 0 10px 10px rgb(0, 0, 0)  ;
+}
+
+
+
+@media (max-width:1200px) {
+    body {
+        overflow: hidden;
+        
+    }
+
+    #oval {
+        height: 400vw;
+        width: 400vw;
+        transition: ease 2s;
+        visibility: hidden;
+
+    }
+    #name {
+        font-size: 8vw;
+        bottom: 40%;
+    }
+    #description {
+        font-size: 4vw;
+        bottom: 36%;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10%;
+        width: 100%;
+        padding: 0%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        flex-direction: row;
+        gap: 0%;
+    }
+
+    nav a {
+        transform: rotate(0deg);
+    }
+
+    #edcontent {
+        margin: 0;
+        width: 100%;
+        padding: 4%;
+        transition: ease 2s;
+    }
+    #edconitem {
+        display: grid;
+        grid-template-columns: auto;
+
+    }
+
+    #Scontent {
+        margin: 0;
+        width: 100%;
+        padding: 4%;
+        display: grid;
+        grid-template-columns: 100%;
+        transition: ease 2s;
+    }
+
+    #SconitemLeft{
+
+        grid-template-columns: 40% auto;
+        transition: ease 2s;
+    }
+
+
 }
